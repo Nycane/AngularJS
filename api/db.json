@@ -1,0 +1,140 @@
+{
+  "user": [
+    {
+      "hoten": "Nguyen Cong Xuan Hung",
+      "email": "Admin@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "hoten": "Nguyen Cong Xuan Hung",
+      "email": "kimdami@gmail.com",
+      "password": "132456789",
+      "id": 2
+    },
+    {
+      "hoten": "Le Van A",
+      "email": "levana@gmail.com",
+      "password": "123123123",
+      "id": 3
+    },
+    {
+      "hoten": "Le Van B",
+      "email": "levanb@gmail.com",
+      "password": "123123123",
+      "id": 4
+    },
+    {
+      "hoten": "ấdasd",
+      "email": "abasdasd@gmail.com",
+      "password": "123123123",
+      "id": 5
+    },
+    {
+      "hoten": "abc",
+      "email": "abc@gmail.com",
+      "password": "12345678",
+      "id": 6
+    }
+  ],
+  "admin": [
+    {
+      "email": "admin@gmail.com",
+      "password": 123
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Kite Runner",
+      "price": 99999,
+      "img": "nguoiduadieu.jpg",
+      "author": "Khaled Hosseini"
+    },
+    {
+      "id": 2,
+      "name": "Đắc Nhân Tâm",
+      "price": "600000",
+      "img": "dacnhantam.png",
+      "author": "Dale Carnegie"
+    },
+    {
+      "id": 3,
+      "name": "Geisha",
+      "price": "700000",
+      "img": "geisha.jpg",
+      "author": "Arthur Golden"
+    },
+    {
+      "id": 4,
+      "name": "Ask Again Yes",
+      "price": "8800000",
+      "img": "askagainyes.jpg",
+      "author": "Mary Beth Keane"
+    },
+    {
+      "id": 5,
+      "name": "My Sister's Keeper",
+      "price": "9800000",
+      "img": "mysisterkeeper.jpg",
+      "author": "Jodi Picoult"
+    },
+    {
+      "id": 6,
+      "name": "The Book Of Dust",
+      "price": "12800000",
+      "img": "thebookofdust.jpg",
+      "author": "Philip Pullman"
+    },
+    {
+      "name": "test",
+      "price": 123123,
+      "img": "4.jpg",
+      "author": "Khaled Hosseini",
+      "id": 7
+    }
+  ],
+  "cart": [
+    {
+      "name": "My Sister's Keeper",
+      "img": "mysisterkeeper.jpg",
+      "price": "9800000",
+      "author": "Jodi Picoult",
+      "quantity": 1,
+      "total": 9800000,
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "name": "Nguyen Cong Xuan Hung",
+      "total": 999990,
+      "date": "29-3-2023",
+      "id": 1
+    },
+    {
+      "name": "Le Van A",
+      "total": 12312300,
+      "date": "29-3-2023",
+      "id": 2
+    },
+    {
+      "name": "Le Van A",
+      "total": 60000000,
+      "date": "29-3-2023",
+      "id": 3
+    },
+    {
+      "name": "Le Van A",
+      "total": 600000,
+      "date": "29-3-2023",
+      "id": 4
+    },
+    {
+      "name": "abc",
+      "total": 1200000,
+      "date": "1-4-2023",
+      "id": 5
+    }
+  ]
+}

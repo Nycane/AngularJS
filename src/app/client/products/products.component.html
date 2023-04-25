@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-3 mb-3 " *ngFor="let e of ListBooks  | paginate: { itemsPerPage: 3, currentPage: page,totalItems:count};let i =index">
+            <div class="card text-center p-2" style="width: 19rem;border: 0px;">
+                <img src="/assets/anh/{{e.img}}" style="height: 350px;"  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{e.name}}</h5>
+                  <i class="fa fa-star"></i>
+                  <p class="card-text">{{e.price|number}} VND</p>
+                  <a [routerLink]="['/client/detail',e.id]" class="btn btn-danger d-block">Detail</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center mt-5 mb-5">
+          <pagination-controls (pageChange)="changePage($event)" ></pagination-controls>
+
+        </div>
+
+    </div>
+</div>

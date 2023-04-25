@@ -1,0 +1,50 @@
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><img src="https://thumbs.dreamstime.com/b/hand-book-logo-illustration-art-background-43965136.jpg" style="width:50px" alt=""></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="client/home">Home</a>
+                      </li>
+                     
+                      <li class="nav-item dropdown" *ngIf="!user">
+                        <div ngbDropdown class="dropdown">
+                            <button ngbDropdownToggle class="btn " type="button" id="dropdownMenuButton1" aria-expanded="false">
+                          Login
+                          </button>
+                            <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+                              <li><a ngbDropdownItem routerLink="/client/login">Login User</a></li>
+                              <li><a ngbDropdownItem routerLink="/loginAdmin">Login Admin</a></li>
+                            </ul>
+                          </div>
+                      </li>
+                      
+                    </ul>
+                    <ul class="navbar-nav d-flex align-items-center mb-2 mb-lg-0">
+                      <li class="nav-item">
+                       <a class="nav-link" routerLink="client/cart"><b><img src="https://w7.pngwing.com/pngs/387/168/png-transparent-shopping-cart-button-graphy-earring-shopping-cart-angle-rectangle-logo.png" style="width:50px" alt=""><span style="position: relative;left:-12px;bottom:-13px;">{{lengthCart}}</span></b></a>
+                      </li>
+                      <li class="nav-item" *ngIf="user">
+                        <img src="https://ychef.files.bbci.co.uk/976x549/p0dnxrcv.jpg" style="width:50px;height:45px;border-radius: 50%;" alt="">
+                      </li>
+                      <li class="nav-item" *ngIf="user">
+                        <span style="cursor: pointer;"  class="nav-link" href="#" tabindex="-1" aria-disabled="true" (click)="logout()">Logout</span>
+                      </li>
+                    </ul>
+                    <div class="d-flex">
+                      <input class="form-control me-2" (keyup)="handelSearch()"  [(ngModel)]="search" type="search" placeholder="Search" aria-label="Search">
+                      <button  class="btn btn-outline-success" (click)="handelSearch()" type="button">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </div>
+</div>
+

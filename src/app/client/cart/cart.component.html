@@ -1,0 +1,57 @@
+<div class="container mt-5 " *ngIf="carts.length>0" >
+    <div class="row">
+        <div class="col-12 ">
+            <table class="table"   >
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col"></th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity </th>
+                    <th scope="col">Total</th>
+                    <th scope="col" colspan="2">Tùy Chọn</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center" *ngFor="let e of carts;let index = index">
+                    <td >{{index+1}}</td>
+                    <td >{{e.name}}</td>
+                    <td> <img src="/assets/anh/{{e.img}}" style="width:70px;height:70px;background-size: cover;" alt="{{e.img}}"></td>
+                    <td>{{e.price|number}}</td>
+                    <td><input type="number" value="{{e.quantity}}" min="0" max="100" [(ngModel)]="e.quantity"></td>
+                    <td>{{e.total|number}}</td>
+                    <td><button type="button" (click)="xoa(e.id)">Remove</button></td>
+                    <td><button type="button" (click)="capnhat(e.id,e.quantity)">Cập Nhật</button></td>
+                  </tr>
+                  <tr class="text-center">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <th>Total Money</th>
+                    <td>{{totalCart|number}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <!--  -->
+        <div class="col-12 text-center" style="margin-bottom: 140px;">
+          <button type="button" (click)="xoahet()" class="btn btn-danger m-2">Xóa Hết</button>
+          <button type="button" (click)="thanhtoan()" class="btn btn-danger m-2">Thanh Toán</button>
+      </div>
+      <!--  -->
+    </div>
+</div>
+   <div class="container" *ngIf="carts.length==0">
+    <div class="row">
+      <div class="col-12 text-center mt-5">
+        <div class="mt-5" style="margin-bottom: 220px;">
+          <h1>Chưa có sản phẩm nào trong giỏ hàng</h1>
+                  <button routerLink="/client/home" type="button" class="btn btn-danger">Quay lại cửa hàng</button>
+        </div>
+          
+      </div>
+    </div>
+   </div>

@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-3 mt-4">
+      <button class="btn btn-md btn-outline-primary" (click)="openPopup()" data-toggle="modal" >Thêm Sản Phẩm</button>
+    </div>
+    <!-- MOdal -->
+    <!-- Button trigger modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display': displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title">Thêm Sản Phẩm</h4>
+            </div>
+              <div class="modal-body">
+               <!-- Form -->
+               <form style="width: 450px;margin-bottom: 50px;" class="mt-5 lg-shadow" #formProduct="ngForm" (ngSubmit)="onSubmit(formProduct)"> 
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label text-dark" style="font-size: 20px;font-family: cursive;">Book Title</label>
+                  <input type="email" class="form-control"  id="exampleInputEmail1" name="name" [(ngModel)]="book.name" required aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label text-dark"style="   font-size:20px;font-family: cursive;">Price</label>
+                  <input type="number" class="form-control"  name="price" [(ngModel)]="book.price" required >
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label text-dark"style="   font-size:20px;font-family: cursive;">Author</label>
+                  <input type="text" class="form-control"  name="author" [(ngModel)]="book.author" required >
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label text-dark"style="   font-size:20px;font-family: cursive;">Image</label>
+                  <input type="file"  class="form-control" name="img"  [(ngModel)]="book.img">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary" style="width: 200px;" *ngIf="isAdd==true">Thêm</button>
+                    <button type="submit" class="btn btn-primary" style="width: 200px;" *ngIf="isAdd==false">Sửa</button>
+                </div>
+              </form>
+               <!-- Form -->
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    x
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -->
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Author</th>
+            <th scope="col" colspan="2" > Tùy Chọn </th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="text-center" *ngFor="let e of products |paginate:{ itemsPerPage: 6, currentPage: page,totalItems:count} ;let i=index">
+            <td>{{e.name}}</td>
+            <td><img src="/assets/anh/{{e.img}}" style="width: 50px;" alt=""></td>
+            <td>{{e.price|number}}</td>
+            <td>{{e.author}}</td>
+            <td><button (click)="deleteId(e.id)"  class="btn btn-danger">Xóa</button></td>
+            <td><button (click)="update(e)"class="btn btn-info">Sửa</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+  <div class="col-12 d-flex justify-content-center mt-5 mb-5">
+    <pagination-controls (pageChange)="changePage($event)" ></pagination-controls>
+  </div>
+  

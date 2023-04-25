@@ -1,0 +1,27 @@
+<div class="container mt-5">
+<div class="row">
+<div class="col-12">
+    <table class="table">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Id Order</th>
+          <th scope="col">Name</th>
+          <th scope="col">Total</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <tr class="text-center" *ngFor="let e of orders|paginate:{ itemsPerPage: 6, currentPage: page,totalItems:count} ;let i=index">
+          <td>{{e.id}}</td>
+          <td>{{e.name}}</td>
+          <td>{{e.total|number}}</td>
+          <td>{{e.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<div class="col-12 d-flex justify-content-center mt-5 mb-5">
+  <pagination-controls (pageChange)="changePage($event)" ></pagination-controls>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center mt-5 mb-5">
+            <form style="width: 500px;margin-bottom: 50px;" class="mt-5 lg-shadow" #formLg="ngForm" (ngSubmit)="onSubmit(formLg)"> 
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label text-white" style="text-shadow: 2px 2px #000000;font-size: 20px;font-family: cursive;">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email" [(ngModel)]="userLogin.email" required aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label text-white"style="   text-shadow: 2px 2px #000000;font-size:20px;font-family: cursive;">Password</label>
+                  <input type="password" class="form-control" name="password" [(ngModel)]="userLogin.password" required id="exampleInputPassword1">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                    <button type="submit" routerLink="/client/dangki" class="btn btn-primary">Đăng Kí</button>
+                </div>
+                
+              </form>
+        </div>
+    </div>
+</div>
+

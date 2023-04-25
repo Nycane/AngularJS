@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center mt-5 mb-5">
+            <form style="width: 500px;" class="mt-5 lg-shadow" #formDk="ngForm" (ngSubmit)="onSubmit(formDk)"> 
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-white" style="text-shadow: 2px 2px #000000;font-size: 20px;font-family: cursive;">Nhập Họ Tên</label>
+                    <input type="text"  #ten="ngModel" [(ngModel)]="user.hoten" ngModel name="hoten" required="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <span class="error" *ngIf="ten.dirty&&ten.errors">
+                      <span *ngIf="ten.errors?.['required']">Vui Lòng Không Để Trống</span>
+                    </span>
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label text-white" style="text-shadow: 2px 2px #000000;font-size: 20px;font-family: cursive;">Nhập Email</label>
+                  <input type="email"  class="form-control" #email="ngModel" ngModel [(ngModel)]="user.email" required email name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <span class="error" *ngIf="email.dirty&&email.errors">
+                    <span *ngIf="email.errors?.['required']">Vui Lòng Không Để Trống</span>
+                    <span *ngIf="email.errors?.['email']">Vui Lòng Nhập Đúng Định Dạng Email VD:(abc@gmail.com)</span>
+                  </span>
+                </div>
+                 <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label text-white"style="  text-shadow: 2px 2px #000000;font-size:20px;font-family: cursive;">Password</label>
+                  <input type="password" minlength="8" #password="ngModel" class="form-control" ngModel [(ngModel)]="user.password" required="" name="password" id="exampleInputPassword1">
+                  <span class="error" *ngIf="password.dirty&&password.errors">
+                    <span *ngIf="password.errors?.['required']">Vui Lòng Không Để Trống</span>
+                    <span *ngIf="password.errors?.['minlength']">Mật khẩu phải có 8 kí tự trở lên</span>
+                  </span>
+                </div>
+             
+                <div class="d-flex justify-content-between">
+                    <button type="submit"  class="btn btn-primary">Đăng Kí</button>
+                </div>
+                
+              </form>
+        </div>
+    </div>
+</div>
